@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Inbox</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4169E1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Inbox</h1>
+    <table>
+        <tr>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        {% for email in emails %}
+            <tr>
+                <td>{{ email.from }}</td>
+                <td>{{ email.subject }}</td>
+                <td>{{ email.message}}</td>
+                <td>{{ email.date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

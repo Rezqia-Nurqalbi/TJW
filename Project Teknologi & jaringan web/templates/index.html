@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            width: 200px;
+            display: flex;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #191970;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9c9b9b;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #9c9b9b;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Email Form</h1>
+        <form method="POST" action="/reply">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <label for="receiver">Receiver:</label>
+            <input type="text" name="receiver" id="receiver" required>
+            <br>
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea>
+            <br>
+            <button type="submit">Send Email</button>
+        </form>
+
+        <h1>Email Inbox</h1>
+        <form method="POST" action="/inbox">
+            <label for="inbox-email">Email:</label>
+            <input type="text" name="email" id="inbox-email" required>
+            <br>
+            <label for="inbox-password">Password:</label>
+            <input type="password" name="password" id="inbox-password" required>
+            <br>
+            <button type="submit">View Inbox</button>
+        </form>
+    </div>
+</body>
+</html>

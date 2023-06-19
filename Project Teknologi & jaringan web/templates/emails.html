@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inbox</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4169E1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Inbox</h2>
+    <table>
+        <tr>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        {% if emails %}
+            {% for index in range((emails|length - 1) , -1, -1) %}
+                <tr>
+                    <td>{{ emails[index].from }}</td>
+                    <td>{{ emails[index].subject }}</td>
+                    <td>{{ emails[index].message }}</td>
+                    <td>{{ emails[index].date }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4">No emails found.</td>
+            </tr>
+        {% endif %}
+    </table>
+</body>
+</html>
